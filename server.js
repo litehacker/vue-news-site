@@ -15,17 +15,10 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const STATIC_DIR = path.join(__dirname, 'static');
 const TEMPLATES_DIR = path.join(__dirname, 'templates');
 
-
-
 const server = express();
-
 
 server.set('view engine', 'pug')
 server.set('views', path.join(TEMPLATES_DIR));
-
-
-
-
 
 if(NODE_ENV === 'development') {  
 
@@ -38,7 +31,6 @@ if(NODE_ENV === 'development') {
 
     server.use(webpackDevMiddleware(compiler, {
         publicPath: '/static/',
-        hot: true,
         stats: {
             colors: true,
         },
@@ -65,7 +57,12 @@ server.get("/", (req, res) => {
 });
 
 
-
+if(module.hot) {
+    console.log("It's very hot")
+}
+else {
+    console.log("It's not hot")
+}
 
 const PORT = process.env.PORT || 8080;
 
