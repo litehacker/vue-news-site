@@ -4,7 +4,8 @@
 # logs
 npm-debug.log
 
-# 
+# generated
+db.json 
 dist/
 static/js/
 static/css/

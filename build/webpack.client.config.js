@@ -1,10 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.config.js')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const baseConfig = require('./webpack.base.config.js');
 
-const PATH = path.join(__dirname, '..')
+
+const PATH = path.join(__dirname, '..');
 
 
 var entry = {
@@ -21,12 +21,12 @@ var clientConfig = merge(baseConfig, {
         vue: ['vue', 'vuex', 'vue-router']
     }, entry),
     output: {
-        path: path.join(PATH, '..', 'static'),
+        path: path.join(PATH, 'static'),
         publicPath: '/static/',
         filename: 'js/[name].bundle.js'
     },
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.coffee', '.vue', '.json'],
         alias: {
             'vue$': "vue/dist/vue.esm.js",
             '@src': path.join(PATH, 'src'),
@@ -52,11 +52,9 @@ var clientConfig = merge(baseConfig, {
             name: ['vue', 'vendors']
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons'
+            name: 'commons',
             chunks: Object.keys(entry)
         }),
-        new ExtractTextPlugin("css/styles.css"),
-        
     ],
 })
 

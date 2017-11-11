@@ -1,12 +1,23 @@
+include mixins/product
+
 html
     head
         title #{title}
+        link(href="/static/css/styles.css", rel="stylesheet")
     body
+        include components/header
         div
-        h1 Ocean's Eleven
-            ul
-            li Comedy
-            li Thriller
-        p.
-            Danny Ocean and his eleven accomplices plan to rob
-            three Las Vegas casinos simultaneously.
+            h3 This is PUG
+                ul
+                li 
+                    +product('something', 7.50, 'red', 'პირველი')
+                li
+                    +product('something else', 0.47, 'blue', 'მეორე')
+            p.
+                Danny Ocean and his eleven accomplices plan to rob
+                three Las Vegas casinos simultaneously.
+
+
+        script(src="/static/js/vendors.bundle.js")
+        script(src="/static/js/vue.bundle.js")
+        script(src="/static/js/main.bundle.js")

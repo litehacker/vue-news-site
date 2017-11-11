@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -51,7 +51,7 @@ var config = {
                         options: {
                             name: '[name].[ext]',
                             outputPath: 'fonts/',
-                            emitFile: false
+                            emitFile: false,
                         },
                     },
                 ],  
@@ -76,7 +76,8 @@ var config = {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        })
+        }),
+        new ExtractTextPlugin("css/styles.css"),
     ],
     devtool: NODE_ENV == 'development' ? 'eval-source-map' : false,
 }
@@ -85,29 +86,3 @@ var config = {
 
 module.exports = config;
 
-
-/*
-{
-    test: /(\.scss|\.css)$/,
-    use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [
-            {
-                loader: 'css-loader',
-                options: {
-                    sourceMap: true
-                }
-            },
-            {
-                loader: 'sass-loader',
-                options: {
-                    sourceMap: true,
-                    outFile: 'css/bundle.css',
-                    outputStyle: 'expanded',
-                }
-            }
-        ],
-    })
-},
-
-*/
