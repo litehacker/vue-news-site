@@ -1,0 +1,13 @@
+# dependencies
+/node_modules/
+
+# logs
+npm-debug.log
+
+# 
+dist/
+static/js/
+static/css/
+
+
+.DS_Store
