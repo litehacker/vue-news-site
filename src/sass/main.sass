@@ -6,6 +6,9 @@
     margin: 0
     padding: 0
 
+ul
+    list-style: none
+
 header
     font-family: 'Dancing Script', cursive
     position: fixed
@@ -23,8 +26,22 @@ header
 
     .nav-container
         font-family: 'Crete Round', sans-serif
-        padding: 5px 5px 0px 5px
+        padding: 15px 15px 0px 14px
+
+    .nav-categoty-item
+        font-size: 20px
+        padding: 8px
+
+        .fa-angle-right
+            padding-right: 10px
+            transform-origin: left
+            animation: dropdown 2s linear
 
 
 
 
+@keyframes dropdown
+    0%
+        transform: rotateZ(0deg)
+    100%
+        transform: rotateZ(90deg)
