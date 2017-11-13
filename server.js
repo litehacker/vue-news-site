@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// const low = require('lowdb')
+// const lowdb = require('lowdb')
 // const FileSync = require('lowdb/adapters/FileSync')
 // const adapter = new FileSync('db.json')
 // const db = low(adapter)
@@ -57,17 +57,12 @@ server.get("/", (req, res) => {
 });
 
 
-if(module.hot) {
-    console.log("It's very hot")
-}
-else {
-    console.log("It's not hot")
-}
+
 
 const PORT = process.env.PORT || 8080;
 
 server.listen(PORT, ()=>{
-    console.log(`listening to port ${PORT} (${NODE_ENV})\n`);
+    console.log(`\nlistening to port ${PORT} (${NODE_ENV})\n`);
 });
 
 

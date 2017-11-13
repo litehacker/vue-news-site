@@ -18,7 +18,7 @@ var clientConfig = merge(baseConfig, {
     target: 'web',
     entry: Object.assign({
         vendors: ['babel-polyfill', 'axios'],
-        vue: ['vue', 'vuex', 'vue-router']
+        vue: ['vue', 'vuex', 'vue-router'],
     }, entry),
     output: {
         path: path.join(PATH, 'static'),
@@ -49,11 +49,7 @@ var clientConfig = merge(baseConfig, {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['vue', 'vendors']
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons',
-            chunks: Object.keys(entry)
+            name: ['commons','vue','vendors']
         }),
     ],
 })
