@@ -1,2 +1,4 @@
-console.log "Hello this is from Coffee :D"
-console.log "It is working"
+# el = document.querySelector '.nav-categoty-item'
+
+# el.addEventListener 'click', (event)->
+#     event.target.classList.add('dropdown')

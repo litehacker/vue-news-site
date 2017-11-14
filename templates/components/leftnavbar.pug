@@ -1,10 +1,18 @@
+- var n = 0
+- var m = [1, 2]
+
+
 div.left-nav-bar
     ul.nav-container
-        li.nav-categoty-item
-            div.category-section
-                i.fa.fa-angle-right
-                span Category 1
-        li.nav-categoty-item
-            div.category-section
-                i.fa.fa-angle-right
-                span Category 2
+        each i in m
+            li.nav-categoty-item
+                div.nav-category-title
+                    i.fa.fa-angle-right
+                    span Category #{i}
+
+                    ul.sub-category-items
+                        while n<5
+                            - n++
+                            li.sub-category-item
+                                span Item #{n}
+                        - n=0

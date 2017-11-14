@@ -6,6 +6,9 @@
     margin: 0
     padding: 0
 
+body
+    font-family: 'Crete Round', sans-serif
+
 ul
     list-style: none
 
@@ -18,26 +21,41 @@ header
     border-bottom: 1px solid $lineColor
     background-color: #fff
 
+    display: flex
+
+    h1
+        margin: auto
+
 .left-nav-bar
     width: 220px
     padding-top: 80px
     border-right: 1px solid $lineColor
-    // height: 1000px
+    min-height: calc(100vh - 80px)
 
     .nav-container
-        font-family: 'Crete Round', sans-serif
         padding: 15px 15px 0px 14px
+
 
     .nav-categoty-item
         font-size: 20px
         padding: 8px
 
+        span
+            cursor: pointer
+            &:hover
+                color: orange
+
         .fa-angle-right
             padding-right: 10px
             transform-origin: left
-            animation: dropdown 2s linear
+            
 
+        .dropdown
+            animation: dropdown 0.2s ease-in-out
+            animation-fill-mode: forwards;
 
+    .sub-category-items
+        padding-left: 19px
 
 
 @keyframes dropdown
