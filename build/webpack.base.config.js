@@ -75,7 +75,7 @@ var config = {
             }
         }),
         new webpack.LoaderOptionsPlugin({
-            minimize: true
+            minimize: NODE_ENV != 'development'
         }),
         new ExtractTextPlugin("css/styles.css"),
     ],
