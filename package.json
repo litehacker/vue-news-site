@@ -7,7 +7,7 @@
     "static": "NODE_ENV=production webpack --config build/webpack.client.config.js -p --hide-modules"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.2",
     "express": "^4.15.4",
     "lowdb": "^1.0.0",
