@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "removeComments": true,
+        "lib": ["DOM", "ES2020", "ES2020.Promise"],
+        "module": "es2020",
+        "target": "es2015",
+        "allowJs": true,
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["frontend/**/*.ts", "frontend/**/*.vue"],
+    "exclude": ["node_modules", "tmp", "**/*.spec.ts"]
+}

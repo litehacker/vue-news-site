@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <% styles.forEach((e)=> { %>
+        <link rel="stylesheet" href="<%= hot_static_url + e %>">
+        <% }) %>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <% scripts.forEach((e)=> { %>
+        <script src="<%= hot_static_url + e %>"></script>
+        <% }) %>
+</body>
+
+</html>

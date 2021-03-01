@@ -1,14 +1,13 @@
-# dependencies
-node_modules
+.vscode/
 
-# logs
-npm-debug.log
-
-# generated
-db.json 
-dist/
-static/js/
-static/css/
-
-
+*.sqlite3
 .DS_Store
+
+dist/
+tmp/
+media/
+
+node_modules
+npm-debug.log
+bower_components
+package-lock.json
