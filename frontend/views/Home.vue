@@ -1,7 +1,7 @@
 <template>
    <div>
-       <h1>content</h1>
-       <h2>content</h2>
+       <h1>content 1</h1>
+       <h2>content 2</h2>
         <ItemVue />
    </div>
 </template>
@@ -17,7 +17,6 @@ export default {
         ItemVue
     },
     setup() {
-
     },
 };
 </script>

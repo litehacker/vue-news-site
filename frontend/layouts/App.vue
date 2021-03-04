@@ -6,9 +6,8 @@
 </template>
 
 <script lang="ts">
-
 export default {
     components: {},
-    setup() {},
+        setup() {},
 };
 </script>
