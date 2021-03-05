@@ -1,13 +1,19 @@
 <template>
     <div class="app-wrapper">
-        <h1>Hello World</h1>
+        <Header/>
         <router-view />
     </div>
 </template>
 
 <script lang="ts">
-export default {
-    components: {},
-        setup() {},
-};
+import { defineComponent } from 'vue';
+import HeaderMenu from "../components/HeaderMenu.vue";
+
+
+export default defineComponent({
+    components: {
+      "Header":  HeaderMenu
+    },
+    setup() {},
+});
 </script>

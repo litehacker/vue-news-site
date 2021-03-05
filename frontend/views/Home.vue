@@ -1,8 +1,6 @@
 <template>
    <div>
-       <h1>content 1</h1>
-       <h2>content 2</h2>
-        <ItemVue />
+        <TopSlider />
    </div>
 </template>
 
@@ -10,11 +8,11 @@
 
 
 <script lang="ts">
-import ItemVue from "../components/Item.vue";
+import TopSlider from "../components/TopSlider.vue";
 
 export default {
     components: {
-        ItemVue
+        TopSlider
     },
     setup() {
     },

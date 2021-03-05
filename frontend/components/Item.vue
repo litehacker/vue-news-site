@@ -10,14 +10,13 @@
 
 
 <script lang="ts">
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
     setup() {
-        
         return {
             'text': " sample text"
-
         }
     }
-};
+});
 </script>
