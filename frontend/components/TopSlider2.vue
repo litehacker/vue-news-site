@@ -28,11 +28,11 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev" @click="changeSlide('prev')">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next" @click="changeSlide('next')">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -48,18 +48,7 @@ export default defineComponent({
     setup() {
 
         const carousel: Ref<HTMLDivElement> = ref(null)
-        let carouselObj = null;
-
-        const changeSlide = (direction)=>{
-            console.log(direction)
-            if(direction==="next"){
-                carouselObj.next()
-            }
-            else if(direction==="prev"){
-                carouselObj.prev()
-            }
-        }
-
+        var carouselObj = null;
 
         onMounted(() => {
             
@@ -72,15 +61,6 @@ export default defineComponent({
 
             window.data = {Slider: carouselObj}
             //window.data.Slider.next()
-
-            // document.getElementById("next").addEventListener("click", function() {
-            //     changeSlide("next")
-            // });
-            // document.getElementById("prev").addEventListener("click", function() {
-            //     changeSlide("prev")
-            // });
-
-
         })
 
 
@@ -90,8 +70,7 @@ export default defineComponent({
                 {
                     imageUrl:"/static/images/dummy_slide.jpg",
                 },
-            ],
-            changeSlide
+            ]
         }
     }
 });
