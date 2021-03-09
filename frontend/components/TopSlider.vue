@@ -53,9 +53,13 @@ export default defineComponent({
             
             carouselObj = new Carousel(carousel.value)
 
+            carouselObj._config.interval=500
+            carouselObj._config.pause=false
+
             console.log(carouselObj)
 
-            window.data = {c: carouselObj}
+
+            window.data = {Slider: carouselObj}
             //window.data.c.next()
         })
 

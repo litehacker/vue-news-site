@@ -21,6 +21,7 @@ server.set("views", path.join(PATH, "templates"));
 server.use(bodyParser.json());
 
 server.use("/static", express.static(path.join(PATH, "static")));
+// make files like images acceptable
 server.use("/static", express.static(path.join(PATH, "assets")));
 server.use("/media", express.static(path.join(PATH, "media")));
 
