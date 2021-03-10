@@ -1,29 +1,34 @@
 <template>
+<ul>
+    <div class="carousel-indicators bg-dark">
+            <button type="button" data-bs-target="#carouselExampleCaptions" :class="true ? 'active' : 'active'" aria-current="true" aria-label="Slide 1" @click="locateSlide(index)" v-for="(slide, index) in state.Slides" :key="slide"></button>
+    </div>
+</ul>
     <div class="carousel slide" ref="carousel" data-bs-ride="carousel" >
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" @click="locateSlide(0)"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" @click="locateSlide(1)"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" @click="locateSlide(2)"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="/static/images/dummy_slide.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
+                    <h5>1 slide label</h5>
                     <p>Some representative placeholder content for the first slide.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="/static/images/dummy_slide.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
+                    <h5>2 slide label</h5>
                     <p>Some representative placeholder content for the second slide.</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="/static/images/dummy_slide.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
+                    <h5>3 slide label</h5>
                     <p>Some representative placeholder content for the third slide.</p>
                 </div>
             </div>
@@ -42,7 +47,7 @@
 <script lang="ts">
 import  Carousel from "bootstrap/js/src/carousel";
 import { log } from "node:console";
-import { defineComponent, onMounted, ref, Ref } from 'vue';
+import { defineComponent, onMounted, ref, Ref, reactive } from 'vue';
 
 export default defineComponent({
     setup() {
@@ -50,8 +55,12 @@ export default defineComponent({
         const carousel: Ref<HTMLDivElement> = ref(null)
         let carouselObj = null;
 
-        const changeSlide = (direction)=>{
-            console.log(direction)
+
+        const locateSlide = (index:number) => { 
+            carouselObj.to(index)
+        }
+
+        const changeSlide = (direction:string)=>{
             if(direction==="next"){
                 carouselObj.next()
             }
@@ -59,6 +68,22 @@ export default defineComponent({
                 carouselObj.prev()
             }
         }
+
+        const state = reactive (
+            {
+                Slides: [
+                    {
+                        title:"first post title",
+                        shortDesc:"Short Description",
+                        bannerURL:"/static/images/dummy_slide.jpg"
+                    },
+                    {
+                        title:"second post title",
+                        shortDesc:"Short Description",
+                        bannerURL:"/static/images/dummy_slide.jpg"
+                    }
+                ]
+            })
 
 
         onMounted(() => {
@@ -71,27 +96,14 @@ export default defineComponent({
             console.log(carouselObj)
 
             window.data = {Slider: carouselObj}
-            //window.data.Slider.next()
-
-            // document.getElementById("next").addEventListener("click", function() {
-            //     changeSlide("next")
-            // });
-            // document.getElementById("prev").addEventListener("click", function() {
-            //     changeSlide("prev")
-            // });
-
-
         })
 
 
         return {
             carousel,
-            slides: [
-                {
-                    imageUrl:"/static/images/dummy_slide.jpg",
-                },
-            ],
-            changeSlide
+            state,
+            changeSlide,
+            locateSlide,
         }
     }
 });

@@ -7,8 +7,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item p-1 " v-for="(item, index) in headerMenuLinks" :key="index" >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" v-for="(item, index) in headerMenuLinks" :key="index">
+                        <li class="nav-item p-1 "  >
                             <router-link class="nav-link " :to="item.url">
                                 {{ item.title }}
                             </router-link>
