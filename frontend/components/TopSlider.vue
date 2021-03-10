@@ -18,7 +18,7 @@
                     <p>Some representative placeholder content for the first slide.</p>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <img src="/static/images/dummy_slide.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>2 slide label</h5>
@@ -45,6 +45,10 @@
 </template>
 
 <script lang="ts">
+
+// window.data.Slider._activeElement()
+// ToDo get active element!!!
+
 import  Carousel from "bootstrap/js/src/carousel";
 import { log } from "node:console";
 import { defineComponent, onMounted, ref, Ref, reactive } from 'vue';
