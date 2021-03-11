@@ -14,20 +14,20 @@
     </div>
     <div class="  px-0" style="background-color:#042b40">
 
-       <div style="height:150px" class="container-xl position-relative">
+       <div style="height:150px" class="container-xl position-relative p-0">
                            <a class="navbar-brand align-middle" href="#">-LOGO-</a>
 
-                    <form class="d-flex position-absolute bottom-0 end-0 py-2">
+                    <form class="d-flex position-absolute bottom-0 end-0 py-4">
                         <input class="form-control me-2" type="search" placeholder="ჩაწერე საძიებო სიტყვა" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">ძებნა</button>
                     </form>
 
        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark container-xl d-flex">
-            <div class="collapse navbar-collapse d-flex justify-content-evenly">
+        <nav class="navbar navbar-expand-lg navbar-dark container-xl d-flex p-0">
+            <div class="collapse navbar-collapse d-flex justify-content-between">
                 <ul class="navbar-nav flex-row" v-for="(item, index) in headerMenuLinks" :key="index">
-                    <li class="to-hover nav-item p-1 border">
-                        <router-link class="nav-link dropdown-toggle" data-bs-toggle="dropdown" :to="item.url">
+                    <li class="to-hover nav-item p-2 border">
+                        <router-link class="nav-link dropdown-toggle p-0" data-bs-toggle="dropdown" :to="item.url">
                             {{ item.title }}
                         </router-link>
                         <ul class="to-show position-absolute bg-light ">
