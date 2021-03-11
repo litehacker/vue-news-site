@@ -26,16 +26,16 @@
         <nav class="navbar navbar-expand-lg navbar-dark container-xl d-flex">
             <div class="collapse navbar-collapse d-flex justify-content-evenly">
                 <ul class="navbar-nav flex-row" v-for="(item, index) in headerMenuLinks" :key="index">
-                    <li class="nav-item p-1 border to-hover ">
+                    <li class="to-hover nav-item p-1 border">
                         <router-link class="nav-link dropdown-toggle" data-bs-toggle="dropdown" :to="item.url">
                             {{ item.title }}
                         </router-link>
                         <ul class="to-show position-absolute bg-light ">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li v-for="subCats in item.subCategories" :key="subCats">
+                                <router-link class="dropdown-item" :to="subCats.url">
+                                    {{ subCats.title }}
+                                </router-link>
+                            </li>
                         </ul>
                     </li>
                     
@@ -61,84 +61,84 @@ export default defineComponent({
                     title:"საზოგადოება",
                     url:"/",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 1",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 2",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 3",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"ეკონომიკა",
                     url:"/2",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 4",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 5",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 6",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"მსოფლიო",
                     url:"/3",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 7",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 8",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"განათლება",
                     url:"/4",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 9",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 10",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 11",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"HI-Tech",
                     url:"/5",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 12",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 13",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 14",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"კულტურა",
                     url:"/5",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 15",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 16",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 17",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 18",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"მოგზაურობა",
                     url:"/5",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 19",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 20",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 21",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 22",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"საინტერესო",
                     url:"/5",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 23",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 24",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 25",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 26",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
                 {
                     title:"ყველა",
                     url:"/5",
                     subCategories:[
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
-                        {title:"სათაური",imageUrl:"/static/images/dummy_slide.jpg"},
+                        {title:"სათაური 27",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 28",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 29",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
+                        {title:"სათაური 30",imageUrl:"/static/images/dummy_slide.jpg",url:"/subcat"},
                     ]
                 },
 
