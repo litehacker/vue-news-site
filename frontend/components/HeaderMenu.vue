@@ -25,24 +25,39 @@
        </div>
         <nav class="navbar navbar-expand-lg navbar-dark container-xl d-flex p-0">
             <div class="collapse navbar-collapse d-flex justify-content-between">
-                <ul class="navbar-nav flex-row" v-for="(item, index) in headerMenuLinks" :key="index">
+                <ul class="navbar-nav" v-for="(item, index) in headerMenuLinks" :key="index">
                     <li class="to-hover nav-item p-2 border">
-                        <router-link class="nav-link dropdown-toggle p-0" data-bs-toggle="dropdown" :to="item.url">
+                        <router-link class="nav-link dropdown-toggle p-0" :to="item.url">
                             {{ item.title }}
                         </router-link>
-                        <ul class="to-show position-absolute bg-light ">
-                            <li v-for="subCats in item.subCategories" :key="subCats">
-                                <router-link class="dropdown-item" :to="subCats.url">
-                                    {{ subCats.title }}
-                                </router-link>
-                            </li>
+                        <ul class="to-show bg-dark  vw-100 start-50 translate-middle-x position-absolute top-100" style="height:300px">
+                            <div class="row " v-for="subCats in item.subCategories" :key="subCats">
+                                
+                                    <div class="col-sm-3">
+                                        <div class="card ">
+                                            <router-link class="text-decoration-none" :to="subCats.url">
+                                                <img :src="subCats.imageUrl" class="card-img-top" :alt="subCats.title">
+                                            </router-link>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ subCats.title }}</h5>
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                            </div>
                         </ul>
                     </li>
-                    
                 </ul>
+                
             </div>
         </nav>
+                    
+
     </div>
+    <p>
+        klasdjfhk jashdlkfj hlasdkfh laskdjfh lkasdjfh lksdjfh 
+        </p>
 </template>
 
 
