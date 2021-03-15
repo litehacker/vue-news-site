@@ -1,21 +1,25 @@
 <template>
-    <div class=" container-flux">
-        <nav class="navbar navbar-expand-lg navbar-light  border">
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" v-for="(item, index) in headerMenuLinks" :key="index">
-                    <li class="nav-item p-1 "  >
-                        <router-link class="nav-link " :to="item.url">
-                            {{ item.title }}
-                        </router-link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <div class="d-flex custom-topmenu">
+        <div class=" container-sm p-0">
+            <nav class="navbar navbar-expand-xl p-0 text-light">
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0" v-for="(item, index) in headerTopMenu" :key="index">
+                        <li class="nav-item  custom-topmenu-link m-0" 
+                        :class="{ 'custom-topmenu-link-first-element': !index, 'promo':item.promo}"
+                        >
+                            <router-link class="nav-link link-light p-0" :to="item.url">
+                                {{ item.title }}
+                            </router-link>
+                        </li>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </div>
     <div class="  px-0" style="background-color:#042b40">
 
-       <div style="height:150px" class="container-xl position-relative p-0">
-                           <a class="navbar-brand align-middle" href="#">-LOGO-</a>
+       <div style="height:150px" class="container-sm position-relative p-0">
+                    <a class="navbar-brand align-middle" href="#">-LOGO-</a>
 
                     <form class="d-flex position-absolute bottom-0 end-0 py-4">
                         <input class="form-control me-2" type="search" placeholder="ჩაწერე საძიებო სიტყვა" aria-label="Search">
@@ -23,17 +27,17 @@
                     </form>
 
        </div>
-        <nav class="navbar navbar-expand-lg navbar-dark container-xl d-flex p-0">
+        <nav class="navbar navbar-dark container  p-0">
             <div class="collapse navbar-collapse d-flex justify-content-between">
+                
                 <ul class="navbar-nav" v-for="(item, index) in headerMenuLinks" :key="index">
                     <li class="to-hover nav-item p-2 border">
                         <router-link class="nav-link dropdown-toggle p-0" :to="item.url">
                             {{ item.title }}
                         </router-link>
-                        <ul class="to-show bg-dark  vw-100 start-50 translate-middle-x position-absolute top-100" style="height:300px">
-                            <div class="row " v-for="subCats in item.subCategories" :key="subCats">
-                                
-                                    <div class="col-sm-3">
+                        <ul class="p-0 to-show  bg-dark  vw-100 start-50 translate-middle-x position-absolute top-100" >
+                            <div class="d-flex container p-0">
+                                <div class="col-sm-3 " v-for="subCats in item.subCategories" :key="subCats">
                                         <div class="card ">
                                             <router-link class="text-decoration-none" :to="subCats.url">
                                                 <img :src="subCats.imageUrl" class="card-img-top" :alt="subCats.title">
@@ -43,8 +47,7 @@
                                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                             </div>
                                         </div>
-                                    </div>
-                                
+                                </div>
                             </div>
                         </ul>
                     </li>
@@ -157,6 +160,67 @@ export default defineComponent({
                     ]
                 },
 
+            ],
+            headerTopMenu:[
+                {
+                    title:"ახალი ამბები",
+                    url:"/",
+                },
+                {
+                    title:"ქალი",
+                    url:"/",
+                },
+                {
+                    title:"ჯანმრთელობა",
+                    url:"/",
+                },
+                {
+                    title:"ვიდეო",
+                    url:"/",
+                    promo:true
+                },
+                {
+                    title:"ჰოროსკოპი",
+                    url:"/",
+                },
+                {
+                    title:"სპორტი",
+                    url:"/",
+                },
+                {
+                    title:"ავტო",
+                    url:"/",
+                },
+                {
+                    title:"მამაკაცი",
+                    url:"/",
+                },
+                {
+                    title:"ბიზნესი",
+                    url:"/",
+                },
+                {
+                    title:"მშობლები",
+                    url:"/",
+                },
+                {
+                    title:"ყველა საიტი",
+                    url:"/",
+                },
+                {
+                    title:"ცხოველები",
+                    url:"/",
+                },
+                {
+                    title:"განცხადებები",
+                    url:"/",
+                    promo:true
+                },
+                {
+                    title:"რეკლამა",
+                    url:"/",
+                    promo:true
+                },
             ]
         }
     }
