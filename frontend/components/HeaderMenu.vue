@@ -44,25 +44,24 @@
                 </button>
             </form>
         </div>
+        <div class="d-flex" style="border-top:1px solid #1d3948">
         <nav class="navbar navbar-dark container p-0">
             <div class="navbar-collapse d-flex">
                 <div
                     class="navbar-nav flex-fill"
-                    :class="`main-menu-item-border-${index}`"
+                    :class="`main-menu-item-border-${index+1}`"
                     v-for="(item, index) in headerMenuLinks"
                     :key="index"
                 >
-                    <div class="to-hover py-2 px-3">
+                    <div class="to-hover py-2 px-3 justify-content-center d-flex">
                         <router-link
-                            class="nav-link dropdown-toggle p-0 text-white"
+                            :class="`nav-link dropdown-toggle p-0 text-white arrow-${index+1}`"
                             :to="item.url"
                         >
                             {{ item.title }}
                         </router-link>
 
-                        <div
-                            class="to-show py-3 px-0 bg-dark vw-100 start-50 translate-middle-x position-absolute top-100"
-                        >
+                        <div class="to-show py-3 px-0 bg-dark vw-100 start-50 translate-middle-x position-absolute top-100">
                             <ul class="d-flex container p-0 mb-0">
                                 <li
                                     class="col-sm-3 p-3"
@@ -95,10 +94,11 @@
                             </ul>
                         </div>
                     </div>
-                    <div :class="`arrow-down-${index}`"></div>
+                    <div :class="`arrow-down-${index+1}`"></div>
                 </div>
             </div>
         </nav>
+        </div>
     </div>
     <p>klasdjfhk jashdlkfj hlasdkfh laskdjfh lkasdjfh lksdjfh</p>
 </template>
