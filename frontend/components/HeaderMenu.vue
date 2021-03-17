@@ -46,13 +46,13 @@
         </div>
         <nav class="navbar navbar-dark container p-0">
             <div class="navbar-collapse d-flex">
-                <ul
-                    class="navbar-nav"
+                <div
+                    class="navbar-nav flex-fill"
                     :class="`main-menu-item-border-${index}`"
                     v-for="(item, index) in headerMenuLinks"
                     :key="index"
                 >
-                    <li class="to-hover py-2 px-3">
+                    <div class="to-hover py-2 px-3">
                         <router-link
                             class="nav-link dropdown-toggle p-0 text-white"
                             :to="item.url"
@@ -60,12 +60,12 @@
                             {{ item.title }}
                         </router-link>
 
-                        <ul
-                            class="p-0 to-show bg-dark vw-100 start-50 translate-middle-x position-absolute top-100"
+                        <div
+                            class="to-show py-3 px-0 bg-dark vw-100 start-50 translate-middle-x position-absolute top-100"
                         >
-                            <div class="d-flex container p-0">
-                                <div
-                                    class="col-sm-3"
+                            <ul class="d-flex container p-0 mb-0">
+                                <li
+                                    class="col-sm-3 p-3"
                                     v-for="subCats in item.subCategories"
                                     :key="subCats"
                                 >
@@ -91,12 +91,12 @@
                                             </p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div :class="`arrow-down-${index}`"></div>
-                </ul>
+                </div>
             </div>
         </nav>
     </div>
