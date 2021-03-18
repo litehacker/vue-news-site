@@ -34,13 +34,12 @@
 
             <form class="d-flex position-absolute bottom-0 end-0 py-4">
                 <input
-                    class="form-control me-2"
+                    class="form-control border-right-none"
                     type="search"
-                    placeholder="ჩაწერე საძიებო სიტყვა"
+                    placeholder="ძებნა..."
                     aria-label="Search"
                 />
-                <button class="btn btn-outline-success" type="submit">
-                    ძებნა
+                <button class="btn btn-light border-left-none" type="submit">
                 </button>
             </form>
         </div>
