@@ -61,36 +61,44 @@
                         </router-link>
 
                         <div class="to-show py-3 px-0 bg-dark vw-100 start-50 translate-middle-x position-absolute top-100">
-                            <ul class="d-flex container p-0 mb-0">
-                                <li
-                                    class="col-sm-3 p-3"
-                                    v-for="subCats in item.subCategories"
-                                    :key="subCats"
-                                >
-                                    <div class="card">
-                                        <router-link
-                                            class="text-decoration-none"
-                                            :to="subCats.url"
-                                        >
-                                            <img
-                                                :src="subCats.imageUrl"
-                                                class="card-img-top"
-                                                :alt="subCats.title"
-                                            />
-                                        </router-link>
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                {{ subCats.title }}
-                                            </h5>
-                                            <p class="card-text">
-                                                Some quick example text to build
-                                                on the card title and make up
-                                                the bulk of the card's content.
-                                            </p>
+                            <div class="d-flex container p-0 mb-0">
+                                <div class="row justify-content-start col-10">
+                                    <li
+                                        class="col-3 p-3"
+                                        v-for="subCats in item.subCategories"
+                                        :key="subCats"
+                                    >
+                                        <div class="card">
+                                            <router-link
+                                                class="text-decoration-none"
+                                                :to="subCats.url"
+                                            >
+                                                <img
+                                                    :src="subCats.imageUrl"
+                                                    class="card-img-top"
+                                                    :alt="subCats.title"
+                                                />
+                                            </router-link>
+                                            <div class="card-body position-absolute bg-dark col-10" style="top:100px; ">
+                                                <h5 class="card-title">
+                                                    {{ subCats.title }}
+                                                </h5>
+                                                <p class="card-text">
+                                                    Some quick example text to build
+                                                    on the card title and make up
+                                                    the bulk of the card's content.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </div>
+                                <div class="col-2">
+                                    <router-link class="text-decoration-none" :to="item.url">
+                                         <span style="font-size:30">მეტი > </span>
+                                    </router-link>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div :class="`arrow-down-${index+1}`"></div>
