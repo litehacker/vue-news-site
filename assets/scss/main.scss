@@ -6,8 +6,10 @@
     color: #46a5d1 !important;
     text-underline-offset: none;
 }
-.to-hover:hover > .to-show {
-    display: block;
+@media (min-width: 1199.98px) {  
+    .to-hover:hover > .to-show {
+        display: block;
+    }
 }
 .custom-dropdown {
     width: 100%;
@@ -39,6 +41,11 @@
     width: 18px;
     background: url(/assets/images/i-exclamation-mark.png) no-repeat left top;
 }
+input[type="text"], textarea {
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #ccc !important;
+    }
 textarea:hover, 
 input:hover, 
 textarea:active, 
@@ -61,6 +68,7 @@ label:focus,
     border-bottom-left-radius: 0px !important;
     position: absolute;
     right: 0px;
+    top: 25px;
     padding-top: 2px !important;
     padding-bottom: 2px !important;
     background: url(/assets/images/socikon.png);
@@ -75,23 +83,30 @@ $colors-margin-left: 29px,18px,19px,22px,3px,14px,20px,23px,1px;
 @for $i from 1 through length($colors) {
     $c: nth($colors, $i);
     $mleft:nth($colors-margin-left, $i);
-    .to-hover:hover .arrow-#{$i}:before {
-        position: absolute;
-        top: 40px;
-        display: block;
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-top: 15px solid $c;
-        content: '';
-        z-index: 3;
-        margin-left:$mleft;
+    @media (min-width: 1199.98px) { 
+
+        .to-hover:hover .arrow-#{$i}:before {
+            position: absolute;
+            top: 40px;
+            display: block;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-top: 15px solid $c;
+            content: '';
+            z-index: 3;
+            margin-left:$mleft;
+        }
     }
     .main-menu-item-border-#{$i} {
         border-top: 2px solid $c;
         border-right: 1px solid #1d3948;
+        font-size:14px;
+        line-height: 40px;
     }
     .main-menu-item-border-#{$i} > .to-hover:hover   {
         background-color: $c;
+        font-size:14px;
+        line-height: 40px;
     }
 }
 
