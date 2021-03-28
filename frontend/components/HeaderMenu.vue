@@ -237,7 +237,6 @@
             </nav>
         </div>
     </div>
-    <p>klasdjfhk jashdlkfj hlasdkfh laskdjfh lkasdjfh lksdjfh</p>
 </template>
 
 <script lang="ts">

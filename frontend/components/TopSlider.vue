@@ -98,10 +98,8 @@ export default defineComponent({
             })
 
             console.log(carouselObj)
-
             window.data = {Slider: carouselObj}
         })
-
 
         return {
             carousel,
