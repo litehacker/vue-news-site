@@ -8,7 +8,8 @@
         "allowJs": true,
         "jsx": "preserve",
         "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true
     },
     "include": ["frontend/**/*.ts", "frontend/**/*.vue"],
     "exclude": ["node_modules", "tmp", "**/*.spec.ts"]
