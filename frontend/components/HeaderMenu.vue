@@ -28,7 +28,6 @@ import MobileNavbar from "../components/mobile/Navbar.vue";
 import SearchDesktop from "../components/desktop/SearchBar.vue";
 import NavBar from "../components/desktop/NavBar.vue";
 import TopNavbar from "../components/desktop/TopNavbar.vue";
-import data from "./data/menu.json";
 
 export default defineComponent({
     components: {
@@ -39,9 +38,7 @@ export default defineComponent({
         TopNavbar,
     },
     setup() {
-        return {
-            data,
-        };
+        return {};
     },
 });
 </script>
