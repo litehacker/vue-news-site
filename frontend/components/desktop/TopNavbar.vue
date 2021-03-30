@@ -1,6 +1,12 @@
 <template>
     <div class="d-flex custom-topmenu">
-        <div class="container p-0">
+        <div
+            class="partners d-none d-xxl-block"
+            style="color: white; position: absolute"
+        >
+            პარტნიორები
+        </div>
+        <div class="container-lg p-0">
             <nav
                 class="navbar navbar-expand-xl d-none d-xl-block p-0 text-light"
             >

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-dark container p-0">
+    <nav class="navbar navbar-dark container p-0" style="max-width: 1140px">
         <div class="navbar-collapse d-none d-lg-block d-lg-flex">
             <div
                 class="navbar-nav flex-fill"

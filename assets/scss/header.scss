@@ -1,15 +1,62 @@
+.container-lg {
+    max-width: 1140px !important;
+}
+.partners {
+    position: relative;
+    min-width: 100px;
+    width: 9%;
+    float: left;
+    height: 39px;
+    background: #021824 url(../images/i-networks.png) no-repeat 20% center;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 15px;
+    color: #727272 !important;
+}
+.partners::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #021824;
+}
+.current-date span {
+    font-family: "helvetica-neue-lt-std-hv" !important;
+    font-size: 16px !important;
+}
+.current-date {
+    font-family: "dejavu-sans-condensed-caps";
+    font-size: 10px !important;
+}
+
 .to-show {
     display: none;
     color: #fff;
 }
-.to-show a:hover{
+.to-show h6 {
+    color: #fff;
+    font-size: 13px;
+}
+.to-show a:hover {
     color: #46a5d1 !important;
     text-underline-offset: none;
 }
-@media (min-width: 1199.98px) {  
+.to-show h6:hover {
+    color: #46a5d1 !important;
+    text-underline-offset: none;
+}
+@media (min-width: 1199.98px) {
     .to-hover:hover > .to-show {
         display: block;
-        z-index:1;
+        z-index: 1;
     }
 }
 .custom-dropdown {
@@ -42,29 +89,29 @@
     width: 18px;
     background: url(/assets/images/i-exclamation-mark.png) no-repeat left top;
 }
-input[type="text"], textarea {
+input[type="text"],
+textarea {
     outline: none;
-    box-shadow:none !important;
-    border:1px solid #ccc !important;
-    }
-textarea:hover, 
-input:hover, 
-textarea:active, 
-input:active, 
-textarea:focus, 
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+}
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
 input:focus,
 button:focus,
 button:active,
 button:hover,
 label:focus,
 .btn:active,
-.btn.active
-{
-    outline:0px !important;
-    -webkit-appearance:none;
+.btn.active {
+    outline: 0px !important;
+    -webkit-appearance: none;
     box-shadow: none !important;
 }
-.border-left-none{
+.border-left-none {
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     position: absolute;
@@ -78,14 +125,14 @@ label:focus,
     width: 42px;
     height: 36px;
 }
-$colors: #2ecc71,#476380,#f39c12,#2ecc71,#3498db,#9b59b6,#d35400,#c0392b,#46a5d1;
-$colors-margin-left: 29px,18px,19px,22px,3px,14px,20px,23px,1px;
+$colors: #2ecc71, #476380, #f39c12, #2ecc71, #3498db, #9b59b6, #d35400, #c0392b,
+    #46a5d1;
+$colors-margin-left: 29px, 18px, 19px, 22px, 3px, 14px, 20px, 23px, 1px;
 
 @for $i from 1 through length($colors) {
     $c: nth($colors, $i);
-    $mleft:nth($colors-margin-left, $i);
-    @media (min-width: 1199.98px) { 
-
+    $mleft: nth($colors-margin-left, $i);
+    @media (min-width: 1199.98px) {
         .to-hover:hover .arrow-#{$i}:before {
             position: absolute;
             top: 40px;
@@ -93,29 +140,30 @@ $colors-margin-left: 29px,18px,19px,22px,3px,14px,20px,23px,1px;
             border-left: 30px solid transparent;
             border-right: 30px solid transparent;
             border-top: 15px solid $c;
-            content: '';
+            content: "";
             z-index: 3;
-            margin-left:$mleft;
+            margin-left: $mleft;
             font-size: 14px;
         }
     }
     .main-menu-item-border-#{$i} {
         border-top: 2px solid $c;
-        border-right: 1px solid #1d3948;
-        font-size:14px;
+        font-size: 14px;
         line-height: 40px;
+        @if $i!=1 {
+            border-right: 1px solid #1d3948;
+        } @else {
+            border-left: 1px solid #1d3948;
+            border-right: 1px solid #1d3948;
+        }
     }
-    .main-menu-item-border-#{$i} > .to-hover:hover   {
+    .main-menu-item-border-#{$i} > .to-hover:hover {
         background-color: $c;
-        font-size:14px;
+        font-size: 14px;
         line-height: 40px;
     }
 }
 
-.card{
-    border:none !important;
-}
-h6 { 
-    color:#fff;
-    font-size: 13px !important;
+.card {
+    border: none !important;
 }
